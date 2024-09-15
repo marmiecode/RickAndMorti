@@ -14,6 +14,10 @@
 		95606A662C977147005EC85B /* RickAndMortiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A652C977147005EC85B /* RickAndMortiTests.swift */; };
 		95606A702C977147005EC85B /* RickAndMortiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A6F2C977147005EC85B /* RickAndMortiUITests.swift */; };
 		95606A722C977147005EC85B /* RickAndMortiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A712C977147005EC85B /* RickAndMortiUITestsLaunchTests.swift */; };
+		95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A802C9772C9005EC85B /* CharacterStatus.swift */; };
+		95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A822C9772E9005EC85B /* CharacterSpecies.swift */; };
+		95606A852C977300005EC85B /* CharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A842C977300005EC85B /* CharacterGender.swift */; };
+		95606A872C97A895005EC85B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A862C97A895005EC85B /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		95606A6B2C977147005EC85B /* RickAndMortiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickAndMortiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95606A6F2C977147005EC85B /* RickAndMortiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortiUITests.swift; sourceTree = "<group>"; };
 		95606A712C977147005EC85B /* RickAndMortiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		95606A802C9772C9005EC85B /* CharacterStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterStatus.swift; sourceTree = "<group>"; };
+		95606A822C9772E9005EC85B /* CharacterSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSpecies.swift; sourceTree = "<group>"; };
+		95606A842C977300005EC85B /* CharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGender.swift; sourceTree = "<group>"; };
+		95606A862C97A895005EC85B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,8 @@
 		95606A532C977145005EC85B /* RickAndMorti */ = {
 			isa = PBXGroup;
 			children = (
+				95606A7F2C97729C005EC85B /* Enums */,
+				95606A7E2C977271005EC85B /* Models */,
 				95606A542C977145005EC85B /* RickAndMortiApp.swift */,
 				95606A562C977145005EC85B /* ContentView.swift */,
 				95606A582C977147005EC85B /* Assets.xcassets */,
@@ -125,6 +135,24 @@
 				95606A712C977147005EC85B /* RickAndMortiUITestsLaunchTests.swift */,
 			);
 			path = RickAndMortiUITests;
+			sourceTree = "<group>";
+		};
+		95606A7E2C977271005EC85B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95606A862C97A895005EC85B /* Character.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		95606A7F2C97729C005EC85B /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				95606A802C9772C9005EC85B /* CharacterStatus.swift */,
+				95606A822C9772E9005EC85B /* CharacterSpecies.swift */,
+				95606A842C977300005EC85B /* CharacterGender.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +285,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */,
 				95606A572C977145005EC85B /* ContentView.swift in Sources */,
+				95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */,
+				95606A872C97A895005EC85B /* Character.swift in Sources */,
+				95606A852C977300005EC85B /* CharacterGender.swift in Sources */,
 				95606A552C977145005EC85B /* RickAndMortiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
