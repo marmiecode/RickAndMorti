@@ -18,6 +18,8 @@
 		95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A822C9772E9005EC85B /* CharacterSpecies.swift */; };
 		95606A852C977300005EC85B /* CharacterGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A842C977300005EC85B /* CharacterGender.swift */; };
 		95606A872C97A895005EC85B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A862C97A895005EC85B /* Character.swift */; };
+		95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A902C9A47B8005EC85B /* APIErrors.swift */; };
+		95606A932C9A4801005EC85B /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A922C9A4801005EC85B /* APIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		95606A822C9772E9005EC85B /* CharacterSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSpecies.swift; sourceTree = "<group>"; };
 		95606A842C977300005EC85B /* CharacterGender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterGender.swift; sourceTree = "<group>"; };
 		95606A862C97A895005EC85B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		95606A902C9A47B8005EC85B /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
+		95606A922C9A4801005EC85B /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				95606A862C97A895005EC85B /* Character.swift */,
+				95606A922C9A4801005EC85B /* APIResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				95606A802C9772C9005EC85B /* CharacterStatus.swift */,
 				95606A822C9772E9005EC85B /* CharacterSpecies.swift */,
 				95606A842C977300005EC85B /* CharacterGender.swift */,
+				95606A902C9A47B8005EC85B /* APIErrors.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -286,9 +292,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */,
+				95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */,
 				95606A572C977145005EC85B /* ContentView.swift in Sources */,
 				95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */,
 				95606A872C97A895005EC85B /* Character.swift in Sources */,
+				95606A932C9A4801005EC85B /* APIResponse.swift in Sources */,
 				95606A852C977300005EC85B /* CharacterGender.swift in Sources */,
 				95606A552C977145005EC85B /* RickAndMortiApp.swift in Sources */,
 			);
