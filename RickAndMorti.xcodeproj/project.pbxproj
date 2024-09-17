@@ -20,6 +20,7 @@
 		95606A872C97A895005EC85B /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A862C97A895005EC85B /* Character.swift */; };
 		95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A902C9A47B8005EC85B /* APIErrors.swift */; };
 		95606A932C9A4801005EC85B /* APIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A922C9A4801005EC85B /* APIResponse.swift */; };
+		95606A962C9A48ED005EC85B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A952C9A48ED005EC85B /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		95606A862C97A895005EC85B /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		95606A902C9A47B8005EC85B /* APIErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		95606A922C9A4801005EC85B /* APIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResponse.swift; sourceTree = "<group>"; };
+		95606A952C9A48ED005EC85B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 		95606A532C977145005EC85B /* RickAndMorti */ = {
 			isa = PBXGroup;
 			children = (
+				95606A942C9A48C9005EC85B /* Services */,
 				95606A7F2C97729C005EC85B /* Enums */,
 				95606A7E2C977271005EC85B /* Models */,
 				95606A542C977145005EC85B /* RickAndMortiApp.swift */,
@@ -159,6 +162,14 @@
 				95606A902C9A47B8005EC85B /* APIErrors.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		95606A942C9A48C9005EC85B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95606A952C9A48ED005EC85B /* APIService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +309,7 @@
 				95606A872C97A895005EC85B /* Character.swift in Sources */,
 				95606A932C9A4801005EC85B /* APIResponse.swift in Sources */,
 				95606A852C977300005EC85B /* CharacterGender.swift in Sources */,
+				95606A962C9A48ED005EC85B /* APIService.swift in Sources */,
 				95606A552C977145005EC85B /* RickAndMortiApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
