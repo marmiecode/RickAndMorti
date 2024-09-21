@@ -21,7 +21,28 @@ class CharacterViewModel: ObservableObject {
         species: selectedSpecies,
         gender: selectedGender
       )
+      DispatchQueue.main.async {
+        self.character.append(contentsOf: newCharacters)
+        self.currentPage += 1
+        self.isLoading = false
+      }
+    } catch {
+      print("Failed to load characters: \(error)")
+      DispatchQueue.main.async {
+        self.isLoading = false
+      }
     }
   }
   
+  func toggleFavourite(character: Character) {
+    if favourites.contains(where: { $0.id == character.id }) {
+      favourites.removeAll { $0.id == character.id }
+    } else {
+      favourites.append(character)
+    }
+  }
+  
+  func isFavourite(character: Character) -> Bool  {
+    favourites.contains(where: { $0.id == character.id })
+  }
 }
