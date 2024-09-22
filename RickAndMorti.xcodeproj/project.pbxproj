@@ -22,6 +22,7 @@
 		95606A962C9A48ED005EC85B /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A952C9A48ED005EC85B /* APIService.swift */; };
 		95606A9B2C9B859A005EC85B /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9A2C9B859A005EC85B /* CharacterViewModel.swift */; };
 		95606A9E2CA0BB56005EC85B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9D2CA0BB56005EC85B /* MainView.swift */; };
+		95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		95606A952C9A48ED005EC85B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		95606A9A2C9B859A005EC85B /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		95606A9D2CA0BB56005EC85B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				95606A9D2CA0BB56005EC85B /* MainView.swift */,
+				95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */,
+				95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */,
 				95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */,
 				95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */,
 				95606A9E2CA0BB56005EC85B /* MainView.swift in Sources */,
