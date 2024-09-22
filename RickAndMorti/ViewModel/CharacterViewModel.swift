@@ -1,5 +1,7 @@
 import Foundation
 
+@MainActor
+
 class CharacterViewModel: ObservableObject {
   @Published var character: [Character] = []
   @Published var favourites: [Character] = []
@@ -21,16 +23,12 @@ class CharacterViewModel: ObservableObject {
         species: selectedSpecies,
         gender: selectedGender
       )
-      DispatchQueue.main.async {
-        self.character.append(contentsOf: newCharacters)
-        self.currentPage += 1
-        self.isLoading = false
-      }
+      self.character.append(contentsOf: newCharacters)
+      self.currentPage += 1
+      self.isLoading = false
     } catch {
       print("Failed to load characters: \(error)")
-      DispatchQueue.main.async {
-        self.isLoading = false
-      }
+      self.isLoading = false
     }
   }
   
