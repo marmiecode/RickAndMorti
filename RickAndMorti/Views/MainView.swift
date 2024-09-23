@@ -9,7 +9,7 @@ struct MainView: View {
           .scaledToFit()
           .padding()
         
-        //NavigationLink(destination: CharacterListView()) {
+        NavigationLink(destination: CharactersListView()) {
           Label("Search", systemImage: "magnifyingglass")
           .font(.title2)
           .padding()
@@ -23,7 +23,8 @@ struct MainView: View {
           .foregroundColor(.white)
           .cornerRadius(10)
         
-       // } .padding
+       }
+        .padding()
       }
       // NavigationLin(destination: FavouritesView() {}
       
