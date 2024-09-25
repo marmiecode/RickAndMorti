@@ -24,6 +24,7 @@
 		95606A9E2CA0BB56005EC85B /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9D2CA0BB56005EC85B /* MainView.swift */; };
 		95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */; };
 		95606AA22CA0DD2A005EC85B /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA12CA0DD2A005EC85B /* CharactersListView.swift */; };
+		95606AA42CA4C64A005EC85B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA32CA4C64A005EC85B /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		95606A9D2CA0BB56005EC85B /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		95606AA12CA0DD2A005EC85B /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
+		95606AA32CA4C64A005EC85B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				95606A9D2CA0BB56005EC85B /* MainView.swift */,
 				95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */,
 				95606AA12CA0DD2A005EC85B /* CharactersListView.swift */,
+				95606AA32CA4C64A005EC85B /* FavoritesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */,
 				95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */,
+				95606AA42CA4C64A005EC85B /* FavoritesView.swift in Sources */,
 				95606AA22CA0DD2A005EC85B /* CharactersListView.swift in Sources */,
 				95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */,
 				95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */,
