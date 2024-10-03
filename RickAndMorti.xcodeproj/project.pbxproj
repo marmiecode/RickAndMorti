@@ -25,6 +25,7 @@
 		95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */; };
 		95606AA22CA0DD2A005EC85B /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA12CA0DD2A005EC85B /* CharactersListView.swift */; };
 		95606AA42CA4C64A005EC85B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA32CA4C64A005EC85B /* FavoritesView.swift */; };
+		95606AA72CAF2F45005EC85B /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA62CAF2F45005EC85B /* LikeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 		95606AA12CA0DD2A005EC85B /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
 		95606AA32CA4C64A005EC85B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		95606AA62CAF2F45005EC85B /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,12 +194,21 @@
 		95606A9C2CA0BB24005EC85B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				95606AA52CAF2F1E005EC85B /* Components */,
 				95606A9D2CA0BB56005EC85B /* MainView.swift */,
 				95606A9F2CA0D954005EC85B /* CharacterDetailView.swift */,
 				95606AA12CA0DD2A005EC85B /* CharactersListView.swift */,
 				95606AA32CA4C64A005EC85B /* FavoritesView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		95606AA52CAF2F1E005EC85B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95606AA62CAF2F45005EC85B /* LikeButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				95606AA22CA0DD2A005EC85B /* CharactersListView.swift in Sources */,
 				95606A912C9A47B8005EC85B /* APIErrors.swift in Sources */,
 				95606A832C9772E9005EC85B /* CharacterSpecies.swift in Sources */,
+				95606AA72CAF2F45005EC85B /* LikeButton.swift in Sources */,
 				95606A9E2CA0BB56005EC85B /* MainView.swift in Sources */,
 				95606A872C97A895005EC85B /* Character.swift in Sources */,
 				95606A932C9A4801005EC85B /* APIResponse.swift in Sources */,
