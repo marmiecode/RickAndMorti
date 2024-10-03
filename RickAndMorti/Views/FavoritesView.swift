@@ -23,7 +23,7 @@ struct FavoritesView: View {
           
           Spacer()
           
-          //likeb
+          //likebutton
         }}
     }
 }
