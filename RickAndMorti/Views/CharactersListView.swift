@@ -26,6 +26,11 @@ struct CharactersListView: View {
               }
               
               Spacer()
+              
+              LikeButton(isLiked: Binding(
+                get: { viewModel.isFavourite(character: character) },
+                set: { newValue in viewModel.toggleFavourite(character: character) }
+              ))
             }
           }
         }
