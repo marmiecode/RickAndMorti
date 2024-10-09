@@ -58,7 +58,7 @@ struct CharactersListView: View {
         }
         .padding(.horizontal)
         
-        List(viewModel.character) { character in
+        List(filteredCharacters()) { character in
           NavigationLink(destination: CharacterDetailView(character: character)) {
             HStack {
               AsyncImage(url: character.image) { image in
@@ -86,6 +86,14 @@ struct CharactersListView: View {
         }
       }
       .navigationTitle("Characters")
+    }
+  }
+  
+  private func filteredCharacters() -> [Character] {
+    return viewModel.character.filter { character in
+      (selectGender == nil || character.gender == selectGender) &&
+      (selectSpecies == nil || character.species == selectSpecies) &&
+      (selectStatus == nil || character.status == selectStatus)
     }
   }
 }
