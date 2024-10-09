@@ -11,8 +11,10 @@ struct CharactersListView: View {
     NavigationView {
       VStack {
         HStack {
-          Picker("Status", selection: $selectStatus){ Text("Status").tag(CharacterStatus?.none)
-            ForEach(CharacterStatus.allCases, id:\.self) { species in Text(species.description).tag(species as CharacterStatus?)
+          Picker("Status", selection: $selectStatus) {
+            Text("Status").tag(CharacterStatus?.none)
+            ForEach(CharacterStatus.allCases, id: \.self) { status in
+              Text(status.description).tag(status as CharacterStatus?)
             }
           }
           .frame(width: 100)
@@ -25,10 +27,10 @@ struct CharactersListView: View {
               .stroke(Color.blue, lineWidth: 1)
           )
           
-          
           Picker("Species", selection: $selectSpecies) {
             Text("Species").tag(CharacterSpecies?.none)
-            ForEach(CharacterSpecies.allCases, id:\.self) { species in Text(species.description).tag(species as CharacterSpecies?)
+            ForEach(CharacterSpecies.allCases, id: \.self) { species in
+              Text(species.description).tag(species as CharacterSpecies?)
             }
           }
           .frame(width: 100)
@@ -43,10 +45,11 @@ struct CharactersListView: View {
           
           Picker("Gender", selection: $selectGender) {
             Text("Gender").tag(CharacterGender?.none)
-            ForEach(CharacterGender.allCases, id: \.self) { gender in Text(gender.description).tag(gender as CharacterGender?)
+            ForEach(CharacterGender.allCases, id: \.self) { gender in
+              Text(gender.description).tag(gender as CharacterGender?)
             }
           }
-          .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+          .frame(width: 100)
           .padding()
           .accentColor(.black)
           .background(Color.blue.opacity(0.2))
@@ -59,24 +62,29 @@ struct CharactersListView: View {
         .padding(.horizontal)
         
         List(filteredCharacters()) { character in
-          NavigationLink(destination: CharacterDetailView(character: character)) {
-            HStack {
-              AsyncImage(url: character.image) { image in
-                image.resizable().scaledToFill()
-              } placeholder: {
-                ProgressView()
-              }
-              .frame(width: 50, height: 50)
-              .clipShape(Circle())
-              
-              VStack(alignment: .leading) {
-                Text(character.name)
-                  .font(.headline)
-                Text(character.species.description)
-                  .font(.subheadline)
-                  .lineLimit(1)
-              }
+          HStack {
+            AsyncImage(url: character.image) { image in
+              image.resizable().scaledToFill()
+            } placeholder: {
+              ProgressView()
             }
+            .frame(width: 50, height: 50)
+            .clipShape(Circle())
+            
+            VStack(alignment: .leading) {
+              Text(character.name)
+                .font(.headline)
+              Text(character.species.description)
+                .font(.subheadline)
+                .lineLimit(1)
+            }
+            
+            Spacer()
+            
+            LikeButton(isLiked: Binding(
+              get: { viewModel.isFavourite(character: character) },
+              set: { newValue in viewModel.toggleFavourite(character: character) }
+            ))
           }
         }
         .onAppear {
@@ -103,3 +111,6 @@ struct CharactersListView: View {
   CharactersListView()
 }
 #endif
+
+
+

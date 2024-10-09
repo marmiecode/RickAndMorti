@@ -33,8 +33,8 @@ class CharacterViewModel: ObservableObject {
   }
   
   func toggleFavourite(character: Character) {
-    if favourites.contains(where: { $0.id == character.id }) {
-      favourites.removeAll { $0.id == character.id }
+    if let index = favourites.firstIndex(where: { $0.id == character.id }) {
+      favourites.remove(at: index)
     } else {
       favourites.append(character)
     }
