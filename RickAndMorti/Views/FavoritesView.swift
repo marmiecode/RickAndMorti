@@ -1,17 +1,15 @@
 import SwiftUI
 
 struct FavoritesView: View {
-  @ObservedObject var viewModel = CharacterViewModel()
+  @ObservedObject var viewModel: CharacterViewModel
   
   var body: some View {
     VStack {
       if viewModel.favourites.isEmpty {
-        
         Text("You don't have any favourite characters yet.")
           .font(.title2)
           .padding()
       } else {
-        
         List(viewModel.favourites) { character in
           HStack {
             AsyncImage(url: character.image) { image in
@@ -31,7 +29,7 @@ struct FavoritesView: View {
             
             Spacer()
             
-            // Przycisk "Lubię" z obsługą logiki
+            
             LikeButton(isLiked: Binding(
               get: { viewModel.isFavourite(character: character) },
               set: { newValue in viewModel.toggleFavourite(character: character) }
@@ -40,12 +38,7 @@ struct FavoritesView: View {
         }
       }
     }
+    .navigationTitle("Favourites") 
   }
 }
-
-#if DEBUG
-#Preview {
-  FavoritesView()
-}
-#endif
 

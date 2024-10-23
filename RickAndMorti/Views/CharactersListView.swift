@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct CharactersListView: View {
-  @StateObject var viewModel = CharacterViewModel()
+  @ObservedObject var viewModel: CharacterViewModel
   
   @State private var selectStatus: CharacterStatus? = nil
   @State private var selectSpecies: CharacterSpecies? = nil
@@ -19,13 +19,6 @@ struct CharactersListView: View {
           }
           .frame(width: 100)
           .padding()
-          .accentColor(.black)
-          .background(Color.blue.opacity(0.2))
-          .cornerRadius(8)
-          .overlay(
-            RoundedRectangle(cornerRadius: 8)
-              .stroke(Color.blue, lineWidth: 1)
-          )
           
           Picker("Species", selection: $selectSpecies) {
             Text("Species").tag(CharacterSpecies?.none)
@@ -35,13 +28,6 @@ struct CharactersListView: View {
           }
           .frame(width: 100)
           .padding()
-          .accentColor(.black)
-          .background(Color.blue.opacity(0.2))
-          .cornerRadius(8)
-          .overlay(
-            RoundedRectangle(cornerRadius: 8)
-              .stroke(Color.blue, lineWidth: 1)
-          )
           
           Picker("Gender", selection: $selectGender) {
             Text("Gender").tag(CharacterGender?.none)
@@ -51,15 +37,7 @@ struct CharactersListView: View {
           }
           .frame(width: 100)
           .padding()
-          .accentColor(.black)
-          .background(Color.blue.opacity(0.2))
-          .cornerRadius(8)
-          .overlay(
-            RoundedRectangle(cornerRadius: 8)
-              .stroke(Color.blue, lineWidth: 1)
-          )
         }
-        .padding(.horizontal)
         
         List(filteredCharacters()) { character in
           HStack {
@@ -82,8 +60,8 @@ struct CharactersListView: View {
             Spacer()
             
             LikeButton(isLiked: Binding(
-              get: { viewModel.isFavourite(character: character) },
-              set: { newValue in viewModel.toggleFavourite(character: character) }
+              get: { viewModel.isFavourite(character: character) }, // Sprawdzenie, czy postać jest ulubiona
+              set: { newValue in viewModel.toggleFavourite(character: character) }  // Dodanie/Usunięcie z ulubionych
             ))
           }
         }
@@ -105,12 +83,4 @@ struct CharactersListView: View {
     }
   }
 }
-
-#if DEBUG
-#Preview {
-  CharactersListView()
-}
-#endif
-
-
 

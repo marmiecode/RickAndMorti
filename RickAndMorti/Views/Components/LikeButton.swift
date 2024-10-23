@@ -9,6 +9,8 @@ struct LikeButton: View {
     }) {
       Image(systemName: isLiked ? "heart.fill" : "heart")
         .foregroundColor(isLiked ? .red : .gray)
+        .imageScale(.large)
+        .padding()
     }
   }
 }
