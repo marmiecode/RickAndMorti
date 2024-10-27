@@ -27,6 +27,7 @@
 		95606AA42CA4C64A005EC85B /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA32CA4C64A005EC85B /* FavoritesView.swift */; };
 		95606AA72CAF2F45005EC85B /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AA62CAF2F45005EC85B /* LikeButton.swift */; };
 		95606AAB2CC94B33005EC85B /* CharacterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AAA2CC94B33005EC85B /* CharacterViewModelTests.swift */; };
+		95606AAF2CCE6500005EC85B /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95606AAE2CCE6500005EC85B /* CacheManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		95606AA32CA4C64A005EC85B /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		95606AA62CAF2F45005EC85B /* LikeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		95606AAA2CC94B33005EC85B /* CharacterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModelTests.swift; sourceTree = "<group>"; };
+		95606AAE2CCE6500005EC85B /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				95606A952C9A48ED005EC85B /* APIService.swift */,
+				95606AAE2CCE6500005EC85B /* CacheManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95606A812C9772C9005EC85B /* CharacterStatus.swift in Sources */,
+				95606AAF2CCE6500005EC85B /* CacheManager.swift in Sources */,
 				95606AA02CA0D954005EC85B /* CharacterDetailView.swift in Sources */,
 				95606AA42CA4C64A005EC85B /* FavoritesView.swift in Sources */,
 				95606AA22CA0DD2A005EC85B /* CharactersListView.swift in Sources */,
