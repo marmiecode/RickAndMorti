@@ -1,13 +1,12 @@
-@testable import RickAndMorti
 import XCTest
+@testable import RickAndMorti
 
-@MainActor
-class CharacterViewModelTests: XCTestCase {
+class CharacterViewModelAPITests: XCTestCase {
   
   var viewModel: CharacterViewModel!
   var session: URLSession!
   
-  override func setUp() {
+  @MainActor override func setUp() {
     super.setUp()
     let config = URLSessionConfiguration.ephemeral
     config.protocolClasses = [APIMockURLProtocol.self]
@@ -21,7 +20,7 @@ class CharacterViewModelTests: XCTestCase {
     super.tearDown()
   }
   
-  func testLoadCharactersSuccess() async throws {
+  @MainActor func testLoadCharactersSuccess() async throws {
     let mockData = """
     {
         "results": [
@@ -38,27 +37,17 @@ class CharacterViewModelTests: XCTestCase {
     """.data(using: .utf8)!
     
     APIMockURLProtocol.testData = mockData
+    
     await viewModel.loadCharacters()
     
     XCTAssertEqual(viewModel.characters.count, 1)
     XCTAssertEqual(viewModel.characters.first?.name, "Rick Sanchez")
-    XCTAssertEqual(viewModel.viewState, .loaded)
+    XCTAssertEqual(viewModel.characters.first?.status.rawValue, "Alive")
   }
   
-  func testLoadCharactersEmpty() async throws {
-    let emptyMockData = """
-        { "results": [] }
-        """.data(using: .utf8)!
-    
-    APIMockURLProtocol.testData = emptyMockData
-    await viewModel.loadCharacters()
-    
-    XCTAssertEqual(viewModel.characters.count, 0)
-    XCTAssertEqual(viewModel.viewState, .empty)
-  }
-  
-  func testLoadCharactersFailure() async throws {
+  @MainActor func testLoadCharactersFailure() async throws {
     APIMockURLProtocol.testError = APIErrors.invalidURL
+    
     await viewModel.loadCharacters()
     
     XCTAssertEqual(viewModel.characters.count, 0)

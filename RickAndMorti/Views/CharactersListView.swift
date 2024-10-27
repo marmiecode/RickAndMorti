@@ -60,14 +60,14 @@ struct CharactersListView: View {
             Spacer()
             
             LikeButton(isLiked: Binding(
-              get: { viewModel.isFavourite(character: character) }, // Sprawdzenie, czy postać jest ulubiona
-              set: { newValue in viewModel.toggleFavourite(character: character) }  // Dodanie/Usunięcie z ulubionych
+              get: { viewModel.isFavourite(character: character) },
+              set: { newValue in viewModel.toggleFavourite(character: character) }
             ))
           }
         }
         .onAppear {
           Task {
-            await viewModel.loadCharacter()
+            await viewModel.loadCharacters()
           }
         }
       }
@@ -76,11 +76,12 @@ struct CharactersListView: View {
   }
   
   private func filteredCharacters() -> [Character] {
-    return viewModel.character.filter { character in
-      (selectGender == nil || character.gender == selectGender) &&
-      (selectSpecies == nil || character.species == selectSpecies) &&
-      (selectStatus == nil || character.status == selectStatus)
+    return viewModel.characters.filter { character in
+      let matchesGender = (selectGender == nil || character.gender == selectGender)
+      let matchesSpecies = (selectSpecies == nil || character.species == selectSpecies)
+      let matchesStatus = (selectStatus == nil || character.status == selectStatus)
+      
+      return matchesGender && matchesSpecies && matchesStatus
     }
   }
 }
-

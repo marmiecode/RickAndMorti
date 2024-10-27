@@ -1,21 +1,27 @@
 import Foundation
 
 @MainActor
-
 class CharacterViewModel: ObservableObject {
-  @Published var character: [Character] = []
+  @Published var characters: [Character] = []
   @Published var favourites: [Character] = []
   @Published var currentPage = 1
   @Published var isLoading = false
+  @Published var viewState: ViewState = .loading
   @Published var selectedStatus: CharacterStatus?
   @Published var selectedSpecies: CharacterSpecies?
   @Published var selectedGender: CharacterGender?
   
-  private let apiService = APIService()
+  private var apiService: APIService
   
-  func loadCharacter() async {
-    guard !isLoading else {return}
+  init(apiService: APIService = APIService()) {
+    self.apiService = apiService
+  }
+  
+  func loadCharacters() async {
+    guard !isLoading else { return }
     isLoading = true
+    viewState = .loading
+    
     do {
       let newCharacters = try await apiService.fetchCharacters(
         page: currentPage,
@@ -23,13 +29,20 @@ class CharacterViewModel: ObservableObject {
         species: selectedSpecies,
         gender: selectedGender
       )
-      self.character.append(contentsOf: newCharacters)
-      self.currentPage += 1
-      self.isLoading = false
+      
+      if newCharacters.isEmpty {
+        viewState = currentPage == 1 ? .empty : .loaded
+      } else {
+        self.characters.append(contentsOf: newCharacters)
+        currentPage += 1
+        viewState = .loaded
+      }
+      
     } catch {
-      print("Failed to load characters: \(error)")
-      self.isLoading = false
+      viewState = .error(error)
     }
+    
+    isLoading = false
   }
   
   func toggleFavourite(character: Character) {
@@ -40,7 +53,7 @@ class CharacterViewModel: ObservableObject {
     }
   }
   
-  func isFavourite(character: Character) -> Bool  {
+  func isFavourite(character: Character) -> Bool {
     favourites.contains(where: { $0.id == character.id })
   }
 }
